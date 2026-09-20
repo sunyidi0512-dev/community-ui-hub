@@ -2,56 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google" content="notranslate" />
-    <title>资讯自选 · Figma 成稿预览</title>
-    <style>
-      * { box-sizing: border-box; }
-      html, body { min-height: 100%; margin: 0; }
-      body { display: grid; place-items: center; background: #1d212b; font-family: system-ui, sans-serif; }
-      .skin-picker { position: fixed; z-index: 1; top: 12px; right: 12px; display: flex; gap: 4px; }
-      .screen { width: 375px; height: 812px; display: flex; flex-direction: column; overflow: hidden; }
-      .scroll-content { flex: 1; overflow-y: auto; overflow-x: hidden; }
-      .art-clip { height: 2968px; overflow: hidden; }
-      .art-clip img { display: none; width: 375px; height: auto; }
-      .art-clip img.is-active { display: block; }
-      .tb-nav-bar { flex: 0 0 83px; overflow: hidden; }
-      .tb-nav-bar div { display: none; width: 375px; height: 83px; background-repeat: no-repeat; background-size: 375px 3051px; background-position: center bottom; }
-      .tb-nav-bar div.is-active { display: block; }
-      .tb-nav-bar [data-skin="light"] { background-image: url("assets/白皮资讯-自选.png"); }
-      .tb-nav-bar [data-skin="dark"] { background-image: url("assets/黑皮资讯-自选.png"); }
-      .tb-nav-bar [data-skin="blackgold"] { background-image: url("assets/黑金皮资讯-自选.png"); }
-      @media (max-width: 375px) { .screen { width: 100vw; height: 100vh; } .art-clip img { width: 100vw; } }
-    </style>
+    <meta http-equiv="refresh" content="0; url=news-watchlist.html" />
+    <title>Community UI Hub</title>
   </head>
-  <body class="notranslate" translate="no">
-    <div class="skin-picker" role="group" aria-label="皮肤切换">
-      <button type="button" data-skin-choice="light">白皮</button>
-      <button type="button" data-skin-choice="dark">黑皮</button>
-      <button type="button" data-skin-choice="blackgold">黑金皮</button>
-    </div>
-    <main class="screen" aria-label="资讯自选 Figma 成稿，375 × 812 可滚动预览">
-      <section class="scroll-content" aria-label="可滚动内容">
-        <div class="art-clip">
-          <img class="is-active" data-skin="light" src="assets/白皮资讯-自选.png" alt="资讯自选白皮 Figma 成稿" />
-          <img data-skin="dark" src="assets/黑皮资讯-自选.png" alt="资讯自选黑皮 Figma 成稿" />
-          <img data-skin="blackgold" src="assets/黑金皮资讯-自选.png" alt="资讯自选黑金皮 Figma 成稿" />
-        </div>
-      </section>
-      <footer class="tb-nav-bar" aria-label="固定底部导航">
-        <div class="is-active" data-skin="light"></div>
-        <div data-skin="dark"></div>
-        <div data-skin="blackgold"></div>
-      </footer>
-    </main>
-    <script>
-      const scrollContent = document.querySelector('.scroll-content');
-      document.querySelectorAll('[data-skin-choice]').forEach((button) => {
-        button.addEventListener('click', () => {
-          document.querySelectorAll('[data-skin]').forEach((image) => image.classList.toggle('is-active', image.dataset.skin === button.dataset.skinChoice));
-          scrollContent.scrollTop = 0;
-        });
-      });
-    </script>
+  <body>
+    <a href="news-watchlist.html">Open News Watchlist</a>
   </body>
 </html>
