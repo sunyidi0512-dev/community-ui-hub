@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <title>资讯-视频列表 · Figma 成稿预览</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { min-height: 100%; margin: 0; }
+      body { display: grid; place-items: center; gap: 20px; padding: 24px; background: #262626; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+      .skins { position: fixed; z-index: 2; top: 80%; left: calc(50% - 290px); display: flex; flex-direction: column; gap: 4px; transform: translateY(-50%); }
+      .skins button { border: 1px solid #777; border-radius: 6px; padding: 7px 10px; color: #fff; background: #3b3b3b; font: inherit; cursor: pointer; }
+      .skins button[aria-pressed="true"] { border-color: #fff; background: #555; }
+      .screen { width: 375px; height: 812px; overflow: hidden; background: #fff; box-shadow: 0 10px 32px rgb(0 0 0 / 35%); }
+      .top, .bottom { position: relative; overflow: hidden; width: 375px; }
+      .top { height: 132px; }
+      .top img { display: block; width: 375px; height: auto; }
+      .scroll { height: 598px; overflow-x: hidden; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none; }
+      .scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
+      .art-clip { height: 1072px; overflow: hidden; }
+      .art-clip img { display: block; width: 375px; height: auto; transform: translateY(-132px); }
+      .bottom { height: 82px; }
+      .bottom img { position: absolute; bottom: 0; display: block; width: 375px; height: auto; }
+      .screen [data-skin] { display: none; }
+      .skin-light .screen [data-skin="light"], .skin-dark .screen [data-skin="dark"], .skin-blackgold .screen [data-skin="blackgold"] { display: block; }
+      @media (max-width: 430px) { body { padding: 0; gap: 0; background: #000; } .screen { height: 812px; box-shadow: none; } .skins { top: auto; bottom: 10px; left: 10px; transform: none; } }
+    </style>
+  </head>
+  <body class="skin-light notranslate" translate="no">
+    <div class="skins" role="group" aria-label="预览皮肤">
+      <button type="button" data-choice="light" aria-pressed="true">白皮</button>
+      <button type="button" data-choice="dark" aria-pressed="false">黑皮</button>
+      <button type="button" data-choice="blackgold" aria-pressed="false">黑金皮</button>
+    </div>
+    <main class="screen" aria-label="资讯-视频列表 Figma 成稿：固定顶部、独立滚动内容和固定底部导航">
+      <section class="top" data-skin="light" aria-label="白皮固定顶部"><img src="assets/白皮资讯-视频列表@3x.png" alt="" /></section>
+      <section class="top" data-skin="dark" aria-label="黑皮固定顶部"><img src="assets/黑皮资讯-视频列表@3x.png" alt="" /></section>
+      <section class="top" data-skin="blackgold" aria-label="黑金皮固定顶部"><img src="assets/黑金皮资讯-视频列表@3x.png" alt="" /></section>
+      <section class="scroll" aria-label="可滚动的视频列表内容">
+        <div class="art-clip" data-skin="light"><img src="assets/白皮资讯-视频列表@3x.png" alt="白皮资讯-视频列表 Figma 原始 3×成稿" /></div>
+        <div class="art-clip" data-skin="dark"><img src="assets/黑皮资讯-视频列表@3x.png" alt="黑皮资讯-视频列表 Figma 原始 3×成稿" /></div>
+        <div class="art-clip" data-skin="blackgold"><img src="assets/黑金皮资讯-视频列表@3x.png" alt="黑金皮资讯-视频列表 Figma 原始 3×成稿" /></div>
+      </section>
+      <footer class="bottom" data-skin="light" aria-label="白皮固定底部导航"><img src="assets/白皮资讯-视频列表@3x.png" alt="" /></footer>
+      <footer class="bottom" data-skin="dark" aria-label="黑皮固定底部导航"><img src="assets/黑皮资讯-视频列表@3x.png" alt="" /></footer>
+      <footer class="bottom" data-skin="blackgold" aria-label="黑金皮固定底部导航"><img src="assets/黑金皮资讯-视频列表@3x.png" alt="" /></footer>
+    </main>
+    <script>
+      document.querySelectorAll('[data-choice]').forEach((button) => button.addEventListener('click', () => {
+        document.body.className = `skin-${button.dataset.choice} notranslate`;
+        document.querySelectorAll('[data-choice]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      }));
+    </script>
+  </body>
+</html>
