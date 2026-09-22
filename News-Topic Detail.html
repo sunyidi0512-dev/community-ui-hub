@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>资讯-主题详情页 · 白皮预览</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+      body { height: 100dvh; background: #262626; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+      .screen { position: fixed; top: 50%; left: 50%; display: grid; grid-template-rows: 88px minmax(0, 1fr) 87px; width: 375px; height: 812px; overflow: hidden; transform: translate(-50%, -50%); background: #fff; box-shadow: 0 10px 32px rgb(0 0 0 / 35%); }
+      .fixed-header, .fixed-footer { position: relative; z-index: 2; overflow: hidden; width: 375px; background: #fff; }
+      .fixed-header { height: 88px; }
+      .status-bar { height: 44px; overflow: hidden; }
+      .navigation-bar { height: 44px; overflow: hidden; }
+      .status-bar img, .navigation-bar img { display: block; width: 375px; height: auto; }
+      .navigation-bar img { transform: translateY(-44px); }
+      .content-scroll { min-height: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; -ms-overflow-style: none; scrollbar-width: none; }
+      .content-scroll::-webkit-scrollbar { display: none; width: 0; height: 0; }
+      .content-art { height: 3550px; overflow: hidden; }
+      .content-art img { display: block; width: 375px; height: auto; transform: translateY(-88px); }
+      .fixed-footer { height: 87px; }
+      .fixed-footer img { position: absolute; bottom: 0; display: block; width: 375px; height: auto; }
+      @media (max-width: 430px) { body { background: #000; } .screen { top: 0; left: 0; transform: none; box-shadow: none; } }
+    </style>
+  </head>
+  <body>
+    <main class="screen" aria-label="资讯-主题详情页白皮预览">
+      <header class="fixed-header" aria-label="固定顶部：状态栏、返回与分享">
+        <div class="status-bar"><img src="assets/News-Topic%20Detail-白皮.png" width="1125" height="11175" alt="" /></div>
+        <div class="navigation-bar"><img src="assets/News-Topic%20Detail-白皮.png" width="1125" height="11175" alt="" /></div>
+      </header>
+      <section class="content-scroll" aria-label="可滚动内容区"><div class="content-art"><img src="assets/News-Topic%20Detail-白皮.png" width="1125" height="11175" alt="资讯-主题详情页白皮原始 3×成稿" /></div></section>
+      <footer class="fixed-footer" aria-label="固定底部 Post 栏"><img src="assets/News-Topic%20Detail-白皮.png" width="1125" height="11175" alt="" /></footer>
+    </main>
+  </body>
+</html>
