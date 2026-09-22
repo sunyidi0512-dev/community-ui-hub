@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { display: grid; place-items: center; background: #333; font-family: system-ui, sans-serif; }
+.skin-picker { position: fixed; z-index: 2; top: 78%; left: calc(50% - 290px); display: flex; flex-direction: column; gap: 4px; transform: translateY(-50%); }
+.screen { width: 375px; height: 812px; display: flex; flex-direction: column; overflow: hidden; }
+.top-tabs { position: relative; flex: 0 0 132px; overflow: hidden; }
+.top-tabs-art { position: absolute; inset: 0; display: none; width: 375px; height: 132px; background-repeat: no-repeat; background-position: center top; }
+.top-tabs-art.is-active { display: block; }
+.top-tabs-art[data-page="watchlist"] { background-size: 375px 3051px; }
+.top-tabs-art[data-page="top"] { background-size: 375px 3224px; }
+.top-tabs-art[data-page="watchlist"][data-skin="light"] { background-image: url("assets/白皮资讯-自选.webp"); }
+.top-tabs-art[data-page="watchlist"][data-skin="dark"] { background-image: url("assets/黑皮资讯-自选.webp"); }
+.top-tabs-art[data-page="watchlist"][data-skin="blackgold"] { background-image: url("assets/黑金皮资讯-自选.webp"); }
+.top-tabs-art[data-page="top"][data-skin="light"] { background-image: url("assets/白皮资讯-要闻.webp"); }
+.top-tabs-art[data-page="top"][data-skin="dark"] { background-image: url("assets/黑皮资讯-要闻.webp"); }
+.top-tabs-art[data-page="top"][data-skin="blackgold"] { background-image: url("assets/黑金皮资讯-要闻.webp"); }
+.scroll-content { flex: 1; overflow-y: auto; overflow-x: hidden; }
+.art-clip { position: relative; overflow: hidden; }
+.art-clip[data-page="watchlist"] { height: 2836px; }
+.art-clip[data-page="top"] { height: 3009px; }
+.art-clip img { display: none; width: 375px; height: auto; transform: translateY(-132px); }
+.art-clip img.is-active { display: block; }
+.tab-hit { position: absolute; top: 88px; height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.tab-hit[data-tab-target="watchlist"] { left: 0; width: 104px; }
+.tab-hit[data-tab-target="top"] { left: 94px; width: 52px; }
+.tab-slider-track { position: absolute; z-index: 1; top: 126px; left: 0; width: 146px; height: 6px; pointer-events: none; }
+.tab-slider { position: absolute; z-index: 2; top: 128px; left: 0; width: 20px; height: 3px; border-radius: 2px; pointer-events: none; }
+.top-tabs[data-skin="light"] .tab-slider-track { background: #fff; }
+.top-tabs[data-skin="dark"] .tab-slider-track { background: #17181c; }
+.top-tabs[data-skin="blackgold"] .tab-slider-track { background: #17181c; }
+.top-tabs[data-skin="light"] .tab-slider { background: #382e37; }
+.top-tabs[data-skin="dark"] .tab-slider { background: #f7e05c; }
+.top-tabs[data-skin="blackgold"] .tab-slider { background: #dfc592; }
+.tb-nav-bar { flex: 0 0 83px; overflow: hidden; }
+.tb-nav-bar div { display: none; width: 375px; height: 83px; background-repeat: no-repeat; background-position: center bottom; }
+.tb-nav-bar div.is-active { display: block; }
+.tb-nav-bar [data-page="watchlist"] { background-size: 375px 3051px; }
+.tb-nav-bar [data-page="top"] { background-size: 375px 3224px; }
+.tb-nav-bar [data-page="watchlist"][data-skin="light"] { background-image: url("assets/白皮资讯-自选.webp"); }
+.tb-nav-bar [data-page="watchlist"][data-skin="dark"] { background-image: url("assets/黑皮资讯-自选.webp"); }
+.tb-nav-bar [data-page="watchlist"][data-skin="blackgold"] { background-image: url("assets/黑金皮资讯-自选.webp"); }
+.tb-nav-bar [data-page="top"][data-skin="light"] { background-image: url("assets/白皮资讯-要闻.webp"); }
+.tb-nav-bar [data-page="top"][data-skin="dark"] { background-image: url("assets/黑皮资讯-要闻.webp"); }
+.tb-nav-bar [data-page="top"][data-skin="blackgold"] { background-image: url("assets/黑金皮资讯-要闻.webp"); }
+@media (prefers-reduced-motion: reduce) { .tab-slider { transition: none; } }
+@media (max-width: 375px) { .screen { width: 100vw; height: 100vh; } .top-tabs-art { width: 100vw; background-size: 100vw auto; } .art-clip img { width: 100vw; } }

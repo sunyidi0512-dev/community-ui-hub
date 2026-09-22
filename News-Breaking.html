@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <title>资讯-快讯 · Figma 成稿预览</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { min-height: 100%; margin: 0; }
+      body { display: grid; place-items: center; padding: 24px; background: #262626; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+      .skin-controls { position: fixed; z-index: 2; top: 78%; left: calc(50% - 290px); display: flex; flex-direction: column; gap: 4px; transform: translateY(-50%); }
+      .skin-controls button { border: 1px solid #777; border-radius: 6px; padding: 7px 10px; color: #fff; background: #3b3b3b; font: inherit; cursor: pointer; }
+      .skin-controls button[aria-pressed="true"] { border-color: #fff; background: #555; }
+      .preview { width: 375px; height: 812px; overflow: hidden; background: #fff; box-shadow: 0 10px 32px rgb(0 0 0 / 35%); }
+      .theme-layer { display: none; }
+      body.theme-light .theme-light, body.theme-dark .theme-dark, body.theme-blackgold .theme-blackgold { display: block; }
+      .top-fixed { width: 375px; height: 132px; overflow: hidden; }
+      .top-fixed img { display: block; width: 375px; height: auto; }
+      .content-scroll { width: 375px; height: 597px; overflow-x: hidden; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none; }
+      .content-scroll::-webkit-scrollbar { display: none; width: 0; height: 0; }
+      .content-slice { height: 957px; overflow: hidden; }
+      .content-slice img { display: block; width: 375px; height: auto; transform: translateY(-132px); }
+      .bottom-fixed { position: relative; width: 375px; height: 83px; overflow: hidden; }
+      .bottom-fixed img { position: absolute; bottom: 0; display: block; width: 375px; height: auto; }
+      @media (max-width: 430px) { body { padding: 0; background: #000; } .preview { box-shadow: none; } }
+    </style>
+  </head>
+  <body class="theme-light notranslate" translate="no">
+    <div class="skin-controls" role="group" aria-label="皮肤切换">
+      <button type="button" data-theme="light" aria-pressed="true">白皮</button>
+      <button type="button" data-theme="dark" aria-pressed="false">黑皮</button>
+      <button type="button" data-theme="blackgold" aria-pressed="false">黑金皮</button>
+    </div>
+    <main class="preview" aria-label="资讯-快讯：375 × 812 固定顶部和底部，中间内容独立滚动">
+      <section class="theme-layer theme-light top-fixed" aria-label="白皮固定顶部"><img src="assets/白皮资讯-快讯@3x.png" alt="" /></section>
+      <section class="theme-layer theme-dark top-fixed" aria-label="黑皮固定顶部"><img src="assets/黑皮资讯-快讯@3x.png" alt="" /></section>
+      <section class="theme-layer theme-blackgold top-fixed" aria-label="黑金皮固定顶部"><img src="assets/黑金皮资讯-快讯@3x.png" alt="" /></section>
+      <section class="content-scroll" aria-label="可滚动内容区">
+        <div class="theme-layer theme-light content-slice"><img src="assets/白皮资讯-快讯@3x.png" alt="白皮资讯-快讯 Figma 原始 3×成稿" /></div>
+        <div class="theme-layer theme-dark content-slice"><img src="assets/黑皮资讯-快讯@3x.png" alt="黑皮资讯-快讯 Figma 原始 3×成稿" /></div>
+        <div class="theme-layer theme-blackgold content-slice"><img src="assets/黑金皮资讯-快讯@3x.png" alt="黑金皮资讯-快讯 Figma 原始 3×成稿" /></div>
+      </section>
+      <footer class="theme-layer theme-light bottom-fixed" aria-label="白皮固定底部导航"><img src="assets/白皮资讯-快讯@3x.png" alt="" /></footer>
+      <footer class="theme-layer theme-dark bottom-fixed" aria-label="黑皮固定底部导航"><img src="assets/黑皮资讯-快讯@3x.png" alt="" /></footer>
+      <footer class="theme-layer theme-blackgold bottom-fixed" aria-label="黑金皮固定底部导航"><img src="assets/黑金皮资讯-快讯@3x.png" alt="" /></footer>
+    </main>
+    <script>
+      document.querySelectorAll('[data-theme]').forEach((button) => button.addEventListener('click', () => {
+        document.body.className = `theme-${button.dataset.theme} notranslate`;
+        document.querySelectorAll('[data-theme]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      }));
+    </script>
+  </body>
+</html>

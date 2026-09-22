@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <title>资讯-要闻 · Figma 成稿预览</title>
+    <link rel="stylesheet" href="news-shell.css" />
+    <style>.tab-slider, .tab-slider-track { display: none; }</style>
+  </head>
+  <body class="notranslate" data-news-page="top" translate="no">
+    <div class="skin-picker" role="group" aria-label="皮肤切换">
+      <button type="button" data-skin-choice="light">白皮</button>
+      <button type="button" data-skin-choice="dark">黑皮</button>
+      <button type="button" data-skin-choice="blackgold">黑金皮</button>
+    </div>
+    <main class="screen" aria-label="资讯-要闻 Figma 成稿，375 × 812 可滚动预览">
+      <section class="top-tabs" aria-label="固定顶部导航">
+        <div class="top-tabs-art" data-page="watchlist" data-skin="light"></div><div class="top-tabs-art" data-page="watchlist" data-skin="dark"></div><div class="top-tabs-art" data-page="watchlist" data-skin="blackgold"></div>
+        <div class="top-tabs-art" data-page="top" data-skin="light"></div><div class="top-tabs-art" data-page="top" data-skin="dark"></div><div class="top-tabs-art" data-page="top" data-skin="blackgold"></div>
+        <button class="tab-hit" type="button" data-tab-target="watchlist" aria-label="Watchlist"></button>
+        <button class="tab-hit" type="button" data-tab-target="top" aria-label="Top"></button>
+      </section>
+      <section class="scroll-content" aria-label="可滚动内容"><div class="art-clip">
+        <img data-page="watchlist" data-skin="light" src="assets/白皮资讯-自选.webp" alt="资讯自选白皮 Figma 成稿" /><img data-page="watchlist" data-skin="dark" src="assets/黑皮资讯-自选.webp" alt="资讯自选黑皮 Figma 成稿" /><img data-page="watchlist" data-skin="blackgold" src="assets/黑金皮资讯-自选.webp" alt="资讯自选黑金皮 Figma 成稿" />
+        <img data-page="top" data-skin="light" src="assets/白皮资讯-要闻.webp" alt="资讯-要闻白皮 Figma 成稿" /><img data-page="top" data-skin="dark" src="assets/黑皮资讯-要闻.webp" alt="资讯-要闻黑皮 Figma 成稿" /><img data-page="top" data-skin="blackgold" src="assets/黑金皮资讯-要闻.webp" alt="资讯-要闻黑金皮 Figma 成稿" />
+      </div></section>
+      <footer class="tb-nav-bar" aria-label="固定底部导航"><div data-page="watchlist" data-skin="light"></div><div data-page="watchlist" data-skin="dark"></div><div data-page="watchlist" data-skin="blackgold"></div><div data-page="top" data-skin="light"></div><div data-page="top" data-skin="dark"></div><div data-page="top" data-skin="blackgold"></div></footer>
+    </main>
+    <script src="news-tabs.js"></script>
+  </body>
+</html>
